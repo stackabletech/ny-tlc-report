@@ -1,10 +1,10 @@
-package org.example
+package tech.stackable.demo.spark
 
 import org.junit._
 import Assert._
 
 @Test
-class AppTest {
+class NYTLCReportTest {
 
     @Test
     def testOK() = assertTrue(true)
