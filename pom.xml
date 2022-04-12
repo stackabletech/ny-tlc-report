@@ -2,46 +2,46 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
   <artifactId>ny-tlc-report</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <inceptionYear>2008</inceptionYear>
+  <version>1.1.0</version>
+  <inceptionYear>2020</inceptionYear>
   <properties>
     <scala.version>2.12.15</scala.version>
-    <scala.compat.version>2.12.15</scala.compat.version>
     <scala.binary.version>2.12</scala.binary.version>
     <spark.version>3.2.1</spark.version>
+    <scopt.version>4.0.1</scopt.version>
   </properties>
 
   <repositories>
     <repository>
-      <id>scala-tools.org</id>
-      <name>Scala-Tools Maven2 Repository</name>
-      <url>http://scala-tools.org/repo-releases</url>
+      <id>scopt</id>
+      <name>Nexus Sonatype Releases Repository</name>
+      <url>https://oss.sonatype.org/content/repositories/releases</url>
     </repository>
   </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>scala-tools.org</id>
-      <name>Scala-Tools Maven2 Repository</name>
-      <url>http://scala-tools.org/repo-releases</url>
-    </pluginRepository>
-  </pluginRepositories>
 
   <dependencies>
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
       <version>${scala.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_${scala.binary.version}</artifactId>
       <version>${spark.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql_${scala.binary.version}</artifactId>
       <version>${spark.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.scopt</groupId>
+      <artifactId>scopt_${scala.binary.version}</artifactId>
+      <version>${scopt.version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -55,6 +55,20 @@
     <sourceDirectory>src/main/scala</sourceDirectory>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
     <plugins>
+      <!-- A plugin for creating an assembly JAR file (Java or Scala) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.scala-tools</groupId>
           <artifactId>maven-scala-plugin</artifactId>
@@ -69,10 +83,7 @@
         </executions>
         <configuration>
           <scalaVersion>${scala.version}</scalaVersion>
-          <mainClass>org.example.App</mainClass>
-          <!-- args>
-            <arg>-target:jvm-1.8</arg>
-          </args -->
+          <mainClass>org.example.NYTLCReport</mainClass>
         </configuration>
       </plugin>
     </plugins>
