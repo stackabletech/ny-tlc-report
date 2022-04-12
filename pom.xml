@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
   <artifactId>ny-tlc-report</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1.0</version>
   <inceptionYear>2020</inceptionYear>
   <properties>
     <scala.version>2.12.15</scala.version>
@@ -55,6 +55,20 @@
     <sourceDirectory>src/main/scala</sourceDirectory>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
     <plugins>
+      <!-- A plugin for creating an assembly JAR file (Java or Scala) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.scala-tools</groupId>
           <artifactId>maven-scala-plugin</artifactId>

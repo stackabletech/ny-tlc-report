@@ -11,7 +11,9 @@ case class CommandLineArgs(
                           )
 
 /**
+ * Generate a report from the NY TLC data.
  *
+ * The command line argument --input is expected to point to a plain text file containing a list of S3 paths.
  */
 object NYTLCReport {
   val appName = "ny-tlc-report"
@@ -36,7 +38,7 @@ object NYTLCReport {
   def main(args: Array[String]): Unit = {
 
     val input = commandLineArgs(args) match {
-      case Some(cla) => Source.fromFile(cla.input).getLines().toArray
+      case Some(cla) => Source.fromFile(cla.input).getLines().filter(line => line.nonEmpty).toArray
       case _ => Array()
     }
     val spark = SparkSession
@@ -45,7 +47,7 @@ object NYTLCReport {
       .getOrCreate()
 
     try {
-      val inputDf = spark.read.options(Map("header" -> "true", "inferSchema" -> "true")).csv(input: _*);
+      val inputDf = spark.read.options(Map("header" -> "true", "inferSchema" -> "true")).csv(input: _*)
       val report = inputDf.select(col("passenger_count"),
         col("trip_distance"),
         col("total_amount"),
@@ -57,10 +59,10 @@ object NYTLCReport {
         .withColumnRenamed("sum(passenger_count)", "total_passengers")
         .orderBy("day_of_week")
 
-      report.show();
+      report.show()
     }
     finally {
-      spark.close();
+      spark.close()
     }
   }
 }
