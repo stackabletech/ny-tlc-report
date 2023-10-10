@@ -19,6 +19,19 @@
 
     <profiles>
         <profile>
+            <id>spark-3.2.1</id>
+            <activation>
+                <property>
+                    <name>spark-3.2.1</name>
+                </property>
+            </activation>
+            <properties>
+                <spark.version>3.2.1</spark.version>
+                <scala.version>2.12.15</scala.version>
+                <scala.binary.version>2.12</scala.binary.version>
+            </properties>
+        </profile>
+        <profile>
             <id>spark-3.3.0</id>
             <activation>
                 <property>
@@ -45,15 +58,28 @@
             </properties>
         </profile>
         <profile>
-            <id>spark-3.2.1</id>
+            <id>spark-3.4.1</id>
             <activation>
                 <property>
-                    <name>spark-3.2.1</name>
+                    <name>spark-3.4.1</name>
                 </property>
             </activation>
             <properties>
-                <spark.version>3.2.1</spark.version>
-                <scala.version>2.12.15</scala.version>
+                <spark.version>3.4.1</spark.version>
+                <scala.version>2.12.17</scala.version>
+                <scala.binary.version>2.12</scala.binary.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>spark-3.5.0</id>
+            <activation>
+                <property>
+                    <name>spark-3.5.0</name>
+                </property>
+            </activation>
+            <properties>
+                <spark.version>3.5.0</spark.version>
+                <scala.version>2.12.18</scala.version>
                 <scala.binary.version>2.12</scala.binary.version>
             </properties>
         </profile>
