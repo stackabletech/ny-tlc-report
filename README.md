@@ -4,7 +4,7 @@ Build a simple report from the New York travel dataset.
 
 # Build
 
-mvn package -P spark-3.4.0
+mvn package -P spark-3.5.0
 
 # Run on Kubernetes
 
