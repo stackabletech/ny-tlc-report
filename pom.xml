@@ -84,6 +84,19 @@
             </properties>
         </profile>
         <profile>
+            <id>spark-3.4.3</id>
+            <activation>
+                <property>
+                    <name>spark-3.4.3</name>
+                </property>
+            </activation>
+            <properties>
+                <spark.version>3.4.3</spark.version>
+                <scala.version>2.12.17</scala.version>
+                <scala.binary.version>2.12</scala.binary.version>
+            </properties>
+        </profile>
+        <profile>
             <id>spark-3.5.0</id>
             <activation>
                 <property>
