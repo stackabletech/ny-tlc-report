@@ -6,6 +6,7 @@
     <version>1.1.0</version>
     <inceptionYear>2020</inceptionYear>
     <properties>
+        <maven.compiler.release>17</maven.compiler.release>
         <scopt.version>4.0.1</scopt.version>
     </properties>
 
