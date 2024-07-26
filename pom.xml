@@ -6,6 +6,7 @@
     <version>1.1.0</version>
     <inceptionYear>2020</inceptionYear>
     <properties>
+        <maven.compiler.release>17</maven.compiler.release>
         <scopt.version>4.0.1</scopt.version>
     </properties>
 
@@ -79,6 +80,19 @@
             </activation>
             <properties>
                 <spark.version>3.4.2</spark.version>
+                <scala.version>2.12.17</scala.version>
+                <scala.binary.version>2.12</scala.binary.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>spark-3.4.3</id>
+            <activation>
+                <property>
+                    <name>spark-3.4.3</name>
+                </property>
+            </activation>
+            <properties>
+                <spark.version>3.4.3</spark.version>
                 <scala.version>2.12.17</scala.version>
                 <scala.binary.version>2.12</scala.binary.version>
             </properties>
