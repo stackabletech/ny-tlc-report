@@ -6,7 +6,7 @@ Build a simple report from the New York travel dataset.
 
 Use Java 17 (e.g. `nix-shell -p jdk17`)!
 
-mvn package -P spark-3.5.5
+mvn package -P spark-3.5.7
 
 # Run on Kubernetes
 

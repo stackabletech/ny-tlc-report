@@ -33,14 +33,14 @@
             </properties>
         </profile>
         <profile>
-            <id>spark-3.5.5</id>
+            <id>spark-3.5.7</id>
             <activation>
                 <property>
-                    <name>spark-3.5.5</name>
+                    <name>spark-3.5.7</name>
                 </property>
             </activation>
             <properties>
-                <spark.version>3.5.5</spark.version>
+                <spark.version>3.5.7</spark.version>
                 <scala.version>2.12.18</scala.version>
                 <scala.binary.version>2.12</scala.binary.version>
             </properties>
