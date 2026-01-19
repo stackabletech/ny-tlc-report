@@ -33,6 +33,19 @@
             </properties>
         </profile>
         <profile>
+            <id>spark-4.0.1</id>
+            <activation>
+                <property>
+                    <name>spark-4.0.1</name>
+                </property>
+            </activation>
+            <properties>
+                <spark.version>4.0.1</spark.version>
+                <scala.version>2.13.17</scala.version>
+                <scala.binary.version>2.13</scala.binary.version>
+            </properties>
+        </profile>
+        <profile>
             <id>spark-4.1.1</id>
             <activation>
                 <property>
