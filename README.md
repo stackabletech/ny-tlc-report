@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repo is not used anymore. The Scala code here is replicated as a PySpark application in the Spark Operator.
+
 # NY TLC Report
 
 Build a simple report from the New York travel dataset.
