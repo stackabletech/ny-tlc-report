@@ -10,7 +10,7 @@ Use Java 17 (e.g. `nix-shell -p jdk17`)!
 
 or
 
-    mvn package -P spark-4.1.1
+    mvn package -P spark-4.1.2
 
 # Run on Kubernetes
 
